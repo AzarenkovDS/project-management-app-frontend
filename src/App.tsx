@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Layout/NavBar";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./components/Footer";
+import Footer from "./components/Layout/Footer";
 
 function App() {
   return (
