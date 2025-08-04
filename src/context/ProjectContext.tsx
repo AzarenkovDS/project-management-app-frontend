@@ -51,10 +51,6 @@ function ProjectProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
   const value = useMemo(
     () => ({
       projects,
