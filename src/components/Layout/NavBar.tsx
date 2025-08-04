@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
 function NavBar() {
-  const { currentUser } = useUser();
+  const { currentUser, logout } = useUser();
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "nav-link active" : "nav-link";
+    "nav-link " + (isActive ? "active" : "");
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom">
@@ -30,6 +30,11 @@ function NavBar() {
                   <NavLink to="/projects" className={linkClass}>
                     Projects
                   </NavLink>
+                </li>
+                <li className="nav-item">
+                  <button onClick={logout} className="btn btn-link nav-link">
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
