@@ -1,69 +1,100 @@
-# React + TypeScript + Vite
+# Project Management App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive React + TypeScript application for managing projects and tasks in a Kanban-style interface. Built with Bootstrap 5.3 and integrated with a secure backend API.
 
-Currently, two official plugins are available:
+## 🧱 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- React Router DOM
+- Context API
+- Axios
+- Bootstrap 5.3 (custom theming)
+- dnd-kit (for drag-and-drop)
 
-## Expanding the ESLint configuration
+## 📂 Folder Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+/src
+  /assets
+  /clients
+    useBackendClient.ts
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  /components
+    /DroppableColumn
+    /Layout
+    /TaskCard
+    /ThemeSwitcher
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+  /context
+    ProjectContext.tsx
+    ThemeContext.tsx
+    UserContext.tsx
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  /hooks
+    useLocalStorage.ts
+
+  /pages
+    HomePage.tsx
+    LoginPage.tsx
+    NotFoundPage.tsx
+    ProjectPage.tsx
+    ProjectsPage.tsx
+    RegisterPage.tsx
+
+  /types
+    index.ts
+
+  App.tsx
+  main.tsx
+
+.env.local
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔧 Environment Setup
+
+Create a `.env.local` file in the root with: VITE_APP_API_URL
+
+## 🏃 Run Locally
+
+npm run dev
+
+Open in browser: http://localhost:5173
+
+## 📘 Features
+
+### ✅ Authentication
+
+- User registration and login
+- JWT stored in memory (Context API)
+- Redirect to login if user is not authenticated
+- Token is automatically attached to all API requests
+
+### 📁 Project Dashboard
+
+- View all projects owned by the user
+- Create, update, delete projects
+
+### 📌 Project Detail Page
+
+- Kanban board with drag-and-drop columns:
+  - To Do
+  - In Progress
+  - Done
+- Tasks can be:
+  - Created
+  - Edited
+  - Deleted
+  - Dragged between columns (status changes)
+- Fully responsive layout with Bootstrap
+
+## 🌐 Deployment
+
+Deployed as a static site on Render:
+
+https://dmytro-pm-app-frontend.onrender.com
