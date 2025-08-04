@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState, useEffect, useContext } from "react";
+import { createContext, useMemo, useState, useContext } from "react";
 import type { ReactNode } from "react";
 import type { Project, ProjectContextType, ProjectFormData } from "../types";
 import { useBackendClient } from "../clients/useBackendClient";

@@ -59,3 +59,12 @@ export interface ProjectContextType {
   updateProject: (id: string, updatedFields: Partial<Project>) => void;
   deleteProject: (id: string) => void;
 }
+
+// Tasks
+export type Task = {
+  _id: string;
+  name: string;
+  description: string;
+  status: "To Do" | "In Progress" | "Done";
+  project: string;
+};

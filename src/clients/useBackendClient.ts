@@ -20,16 +20,16 @@ export const useBackendClient = () => {
   );
 
   // Catch 401 errors
-  client.interceptors.response.use(
-    (response) => response,
-    (error) => {
-      if (error.response?.status === 401) {
-        logout();
-      }
+  // client.interceptors.response.use(
+  //   (response) => response,
+  //   (error) => {
+  //     if (error.response?.status === 401) {
+  //       logout();
+  //     }
 
-      return Promise.reject(error);
-    }
-  );
+  //     return Promise.reject(error);
+  //   }
+  // );
 
   return client;
 };
