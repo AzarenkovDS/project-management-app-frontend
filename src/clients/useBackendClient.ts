@@ -2,7 +2,7 @@ import axios from "axios";
 import { useUser } from "../context/UserContext";
 
 export const useBackendClient = () => {
-  const { currentUser, logout } = useUser();
+  const { currentUser } = useUser();
 
   const client = axios.create({
     baseURL: import.meta.env.VITE_APP_API_URL,
