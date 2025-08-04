@@ -38,3 +38,24 @@ export type LoginFormData = {
   email: String;
   password: String;
 };
+
+// Projects
+export interface Project {
+  _id: string;
+  name: string;
+  description: string;
+  user: string;
+}
+
+export interface ProjectFormData {
+  name: string;
+  description: string;
+}
+
+export interface ProjectContextType {
+  projects: Project[];
+  fetchProjects: () => void;
+  addProject: (fromData: ProjectFormData) => void;
+  updateProject: (id: string, updatedFields: Partial<Project>) => void;
+  deleteProject: (id: string) => void;
+}

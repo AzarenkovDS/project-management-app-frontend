@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { backendClient } from "../clients/backendClient";
+import { useBackendClient } from "../clients/useBackendClient";
 import type {
   CurrentUser,
   LoginFormData,
@@ -21,6 +21,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
     "current_user",
     null
   );
+  const backendClient = useBackendClient();
 
   const navigate = useNavigate();
 
